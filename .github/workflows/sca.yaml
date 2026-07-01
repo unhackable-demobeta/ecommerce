@@ -16,7 +16,7 @@ env:
 name: Lacework Code Analysis (PR)
 jobs:
   sca-analysis:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     name: Run analysis
     strategy:
       matrix:
@@ -35,7 +35,7 @@ jobs:
           target: ${{ matrix.target }}
           tools: sca
   display-results:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     name: Display results
     needs:
       - sca-analysis
